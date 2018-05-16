@@ -1,34 +1,32 @@
 <ion-header>
-
   <ion-navbar color="shamir2">
     <ion-title>Grupo de Mermas Abierto</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content>
   <ion-card>
     <ion-card-header>
-      FOLIO DE MERMA: 123456789-A
+      Orden
     </ion-card-header>
     <ion-list>
-      <button ion-item color="shamir1">
-        <ion-icon name="barcode" item-start></ion-icon>
-        Leer codigo de barras
-      </button>
-
       <ion-item>
-        <ion-label fixed>Orden</ion-label>
-        <ion-input type="text" value="123456" readonly></ion-input>
+        <button ion-item color="shamir1">
+          <ion-icon name="barcode" item-start></ion-icon>
+          Escanear código de barras
+        </button>
+      </ion-item>
+      <ion-item>
+        <p>Orden escaneada</p>
+        <p>123456</p>
       </ion-item>
 
     </ion-list>
   </ion-card>
 
-  <ion-list radio-group>
+  <ion-list radio-group padding>
     <ion-list-header>
-      Motivo de Merma
+      Motivo de merma
     </ion-list-header>
 
     <ion-item>
@@ -37,7 +35,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label>Recházo</ion-label>
+      <ion-label>Rechazo</ion-label>
       <ion-radio [color]="radioColor" (ionSelect)="cambiarRadioColor()" value="2"></ion-radio>
     </ion-item>
 
@@ -49,7 +47,7 @@
 
   <ion-card>
     <ion-card-header>
-      Guardar y Enviar
+      Guardar / Enviar
     </ion-card-header>
     <ion-list>
       <ion-item>
