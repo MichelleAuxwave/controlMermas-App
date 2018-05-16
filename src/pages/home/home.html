@@ -9,17 +9,17 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      REPORTE DE MERMAS
+      <h1 block center>REPORTE DE MERMAS</h1>
     </ion-card-header>
 
     <ion-list>
-      <button ion-item>
-        <ion-icon name="add" item-start></ion-icon>
+      <button ion-item [navPush]="nuevoGrupo">
+        <ion-icon name="add" item-start color="shamir1"></ion-icon>
         Nuevo Grupo de Mermas
       </button>
 
-      <button ion-item>
-        <ion-icon name="folder" item-start></ion-icon>
+      <button ion-item [navPush]="grupoAbierto">
+        <ion-icon name="folder" item-start color="shamir1"></ion-icon>
         Grupo de Mermas Abierto
       </button>
     </ion-list>

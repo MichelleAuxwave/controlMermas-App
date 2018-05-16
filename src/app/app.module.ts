@@ -7,14 +7,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 
 /* PAGINAS */
-import { HomePage, TabsPage, HistorialPage } from '../pages/pages.index';
+import { HomePage, TabsPage, HistorialPage, NuevogrupoPage, GrupoabiertoPage } from '../pages/pages.index';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TabsPage,
-    HistorialPage
+    HistorialPage,
+    NuevogrupoPage,
+    GrupoabiertoPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,9 @@ import { HomePage, TabsPage, HistorialPage } from '../pages/pages.index';
     MyApp,
     HomePage,
     TabsPage,
-    HistorialPage
+    HistorialPage,
+    NuevogrupoPage,
+    GrupoabiertoPage
   ],
   providers: [
     StatusBar,
