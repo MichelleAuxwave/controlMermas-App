@@ -6,6 +6,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
+
 /* PAGINAS */
 import {
   HomePage,
@@ -38,11 +41,12 @@ import {
     HistorialPage,
     NuevogrupoPage,
     GrupoabiertoPage,
-    DetallehistorialPage 
+    DetallehistorialPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
