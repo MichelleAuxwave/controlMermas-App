@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -10,10 +11,13 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 export class GrupoabiertoPage {
 
-  radioColor: string = 'dark';
-  noOrdenEscaneada : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner) {
+
+  radioColor: string = 'dark';
+  noOrdenEscaneada : string;
+  noOrdenLeida: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner, private storage: Storage) {
   }
 
   cambiarRadioColor(){
@@ -28,6 +32,14 @@ export class GrupoabiertoPage {
     }).catch(err => {
         console.log('Error', err);
     });
+  }
+
+  guardarScan(){
+    this.storage.set('ordenEscaneada', this.noOrdenEscaneada);
+
+    this.storage.get('ordenEscaneada').then((val) => {
+    this.noOrdenLeida = val;
+  });
   }
 
 }
