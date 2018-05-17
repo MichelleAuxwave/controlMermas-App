@@ -7,15 +7,13 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   selector: 'page-grupoabierto',
   templateUrl: 'grupoabierto.html',
 })
+
 export class GrupoabiertoPage {
 
   radioColor: string = 'dark';
+  noOrdenEscaneada : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad GrupoabiertoPage');
   }
 
   cambiarRadioColor(){
@@ -24,7 +22,9 @@ export class GrupoabiertoPage {
 
   scanBC(){
     this.barcodeScanner.scan().then(barcodeData => {
-     console.log('Barcode data', barcodeData);
+      if(!barcodeData.cancelled == true){
+        this.noOrdenEscaneada = barcodeData.text;
+      }
     }).catch(err => {
         console.log('Error', err);
     });
