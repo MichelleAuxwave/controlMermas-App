@@ -14,7 +14,6 @@ export class GrupoabiertoPage {
 
 
   radioColor: string = 'dark';
-  noOrdenEscaneada : string;
   noOrdenLeida: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner, private storage: Storage) {
@@ -27,19 +26,18 @@ export class GrupoabiertoPage {
   scanBC(){
     this.barcodeScanner.scan().then(barcodeData => {
       if(!barcodeData.cancelled == true){
-        this.noOrdenEscaneada = barcodeData.text;
+        this.guardarScan( barcodeData.text );
       }
     }).catch(err => {
         console.log('Error', err);
     });
   }
-/*
-  guardarScan(){
-      this.storage.set('ordenEscaneada', this.noOrdenEscaneada);
 
+  guardarScan( valor:string ){
+      this.storage.set('ordenEscaneada', valor);
       this.storage.get('ordenEscaneada').then((val) => {
       this.noOrdenLeida = val;
     });
   }
-*/
+
 }
