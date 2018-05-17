@@ -10,11 +10,9 @@ import { Storage } from '@ionic/storage';
 })
 
 export class GrupoabiertoPage {
-
-
-
   radioColor: string = 'dark';
   noOrdenLeida: any;
+  datosGuardados:any[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private barcodeScanner: BarcodeScanner, private storage: Storage) {
   }

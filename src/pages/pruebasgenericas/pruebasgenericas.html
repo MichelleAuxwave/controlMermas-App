@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="shamir2">
+    <ion-title>Pruebas Genericas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Valor A</ion-label>
+      <ion-input type="text" [(ngModel)]="variableA"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Valor B</ion-label>
+      <ion-input type="text" [(ngModel)]="variableB"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button block color="shamir2" (click)="guardar1()">Guardar</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

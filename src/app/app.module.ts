@@ -9,6 +9,11 @@ import { MyApp } from './app.component';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IonicStorageModule } from '@ionic/storage';
 
+import { DatabaseProvider } from '../providers/database/database';
+import { HttpModule} from '@angular/http';
+import { SQLitePorter } from '@ionic-native/sqlite-porter';
+import { SQLite } from '@ionic-native/sqlite';
+
 /* PAGINAS */
 import {
   HomePage,
@@ -16,7 +21,8 @@ import {
   HistorialPage,
   NuevogrupoPage,
   GrupoabiertoPage,
-  DetallehistorialPage
+  DetallehistorialPage,
+  PruebasgenericasPage
 } from '../pages/pages.index';
 
 @NgModule({
@@ -27,7 +33,8 @@ import {
     HistorialPage,
     NuevogrupoPage,
     GrupoabiertoPage,
-    DetallehistorialPage
+    DetallehistorialPage,
+    PruebasgenericasPage
   ],
   imports: [
     BrowserModule,
@@ -42,13 +49,17 @@ import {
     HistorialPage,
     NuevogrupoPage,
     GrupoabiertoPage,
-    DetallehistorialPage
+    DetallehistorialPage,
+    PruebasgenericasPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BarcodeScanner,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatabaseProvider,
+    SQLitePorter,
+    SQLite
   ]
 })
 export class AppModule {}
