@@ -33,13 +33,13 @@ export class GrupoabiertoPage {
         console.log('Error', err);
     });
   }
-
+/*
   guardarScan(){
-    this.storage.set('ordenEscaneada', this.noOrdenEscaneada);
+      this.storage.set('ordenEscaneada', this.noOrdenEscaneada);
 
-    this.storage.get('ordenEscaneada').then((val) => {
-    this.noOrdenLeida = val;
-  });
+      this.storage.get('ordenEscaneada').then((val) => {
+      this.noOrdenLeida = val;
+    });
   }
-
+*/
 }

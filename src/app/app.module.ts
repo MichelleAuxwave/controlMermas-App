@@ -32,7 +32,7 @@ import {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
