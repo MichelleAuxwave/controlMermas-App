@@ -8,26 +8,26 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Valor A</ion-label>
-      <ion-input type="text" [(ngModel)]="merm.noOT"></ion-input>
+      <ion-input type="text" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Valor B</ion-label>
-      <ion-input type="text" [(ngModel)]="merm.tipo"></ion-input>
+      <ion-input type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Valor C</ion-label>
-      <ion-input type="text" [(ngModel)]="merm.obs"></ion-input>
+      <ion-input type="text" ></ion-input>
     </ion-item>
     <ion-item>
-      <button ion-button full color="shamir2" (click)="guardarEnDB()">Guardar</button>
+      <button ion-button full color="shamir2" >Guardar</button>
     </ion-item>
   </ion-list>
 
   <ion-list>
-    <ion-item *ngFor="let merm of mermas">
-      <h2>{{ merm.noOT }}</h2>
-      <h2>{{ merm.tipo }}</h2>
-      <h2>{{ merm.obs }}</h2>
+    <ion-item >
+      <h2></h2>
+      <h2></h2>
+      <h2></h2>
     </ion-item>
   </ion-list>
 </ion-content>
