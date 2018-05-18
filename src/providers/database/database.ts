@@ -25,7 +25,7 @@ export class DatabaseProvider {
           name: 'example.db',
           location: 'default'
         })
-        .then((d: SQLiteObject ) => {
+        .then((db: SQLiteObject ) => {
           this.database = db;
           this.storage.get('database_filled').then( val => {
             if(val){
