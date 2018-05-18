@@ -59,7 +59,8 @@ import {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DatabaseProvider,
     SQLitePorter,
-    SQLite
+    SQLite,
+    HttpModule
   ]
 })
 export class AppModule {}

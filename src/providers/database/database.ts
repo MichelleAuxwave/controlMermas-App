@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs/Rx';
 import { IonicStorageModule } from '@ionic/storage';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import 'rxjs/add/operator/map';
+import { HttpModule } from '@angular/http';
 
 @Injectable()
 export class DatabaseProvider {
@@ -17,7 +18,9 @@ export class DatabaseProvider {
     private sqlitePorter: SQLitePorter,
     private storage: Storage,
     private sqlite: SQLite,
-    private platform: Platform)
+    private platform: Platform,
+    private httpModule: HttpModule
+  )
     {
       this.databaseReady = new BehaviorSubject(false);
       this.platform.ready().then(() => {
