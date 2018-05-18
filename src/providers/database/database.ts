@@ -52,6 +52,28 @@ export class DatabaseProvider {
     });
   }
 
+  addOT(noOT, tipo, obs){
+    let data = [noOT, tipo, obs];
+    return this.database.executeSql("insert into mermasguardadas (noOT, tipo, obs) values (?, ?, ?)", data).then(res =>{
+      return res;
+    })
+  }
+
+  getOT(){
+    return this.database.executeSql("select * from mermasguardadas", []).then(data => {
+      let mermas = [];
+      if (data.rows.length > 0){
+        for(var i = 0; i < data.rows.length; i++){
+          mermas.push({noOT: data.rows.item(i).noOT, tipo: data.rows.item(i).tipo, obs: data.rows.item(i).obs});
+        }
+      }
+      return mermas;
+    }, err => {
+      console.log('Error: ', err);
+      return [];
+    })
+  }
+
   getDatabaseState(){
     return this.databaseReady.asObservable();
   }
