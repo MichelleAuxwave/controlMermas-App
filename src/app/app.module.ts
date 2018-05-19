@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatabaseProvider } from '../providers/database/database';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { SQLite } from '@ionic-native/sqlite';
-import { HttpModule } from '@angular/http';
+import { Http } from '@angular/http';
 
 /* PAGINAS */
 import {
@@ -52,7 +52,7 @@ import {
     NuevogrupoPage,
     GrupoabiertoPage,
     DetallehistorialPage,
-    PruebasgenericasPage
+    PruebasgenericasPage,
   ],
   providers: [
     StatusBar,
@@ -62,7 +62,8 @@ import {
     DatabaseProvider,
     SQLitePorter,
     SQLite,
-    HttpClientModule
+    HttpClientModule,
+    Http
   ]
 })
 export class AppModule {}
