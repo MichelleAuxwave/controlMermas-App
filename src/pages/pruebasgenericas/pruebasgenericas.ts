@@ -7,7 +7,7 @@ import { DatabaseProvider } from '../../providers/database/database';
   templateUrl: 'pruebasgenericas.html',
 })
 export class PruebasgenericasPage {
-  mermas = {};
+  mermas = [];
   merm = {};
 
   constructor(
