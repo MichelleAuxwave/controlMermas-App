@@ -10,7 +10,6 @@ import { MyApp } from './app.component';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
-import { DatabaseProvider } from '../providers/database/database';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { SQLite } from '@ionic-native/sqlite';
 import { Http } from '@angular/http';
@@ -60,7 +59,6 @@ import {
     SplashScreen,
     BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DatabaseProvider,
     SQLitePorter,
     SQLite,
     IonicStorageModule,
