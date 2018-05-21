@@ -11,10 +11,11 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
-import { SQLite } from '@ionic-native/sqlite';
 import { Http } from '@angular/http';
 import { HttpModule } from '@angular/http';
 import { Storage } from '@ionic/storage';
+
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 /* PAGINAS */
 import {
@@ -26,6 +27,7 @@ import {
   DetallehistorialPage,
   PruebasgenericasPage
 } from '../pages/pages.index';
+import { DatabaseProvider } from '../providers/database/database';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import {
   imports: [
     BrowserModule,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -62,7 +65,8 @@ import {
     SQLitePorter,
     SQLite,
     IonicStorageModule,
-    HttpModule
+    HttpModule,
+    DatabaseProvider
   ]
 })
 export class AppModule {}
