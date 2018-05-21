@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DatabaseProvider } from './../../providers/database/database'
 
-
-@IonicPage()
 @Component({
   selector: 'page-pruebasgenericas',
   templateUrl: 'pruebasgenericas.html',

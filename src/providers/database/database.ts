@@ -3,17 +3,19 @@ import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { IonicStorageModule } from '@ionic/storage';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite'
 import { Injectable } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { BehaviorSubject } from 'rxjs/Rx';
 import { HttpClientModule } from '@angular/common/http';
+import { Storage } from '@ionic/storage';
+
 @Injectable()
 export class DatabaseProvider {
   database: SQLiteObject;
   private databaseReady: BehaviorSubject<boolean>;
 
   constructor(
-    public http: HttpModule,
+    public http: Http,
     private sqlitePorter: SQLitePorter,
     private storage: Storage,
     private sqlite: SQLite,
@@ -42,7 +44,7 @@ export class DatabaseProvider {
   }
 
   fillDatabase(){
-    this.http.get('assets/internalDB.sql')
+    this.http.get('../../assets/internalDB.sql')
     .map(res => res.text())
     .subscribe(sql => {
       this.sqlitePorter.importSqlToDb(this.database, sql)
@@ -56,9 +58,13 @@ export class DatabaseProvider {
 
   agregarMerma(ord, tip, obs){
     let data = [ord, tip, obs];
+    console.log('Insertando Datos: ', data);
     return this.database.executeSql("insert into mermasguardadas (ord, tip, obs) values (?, ?, ?)", data)
     .then(res => {
       return res;
+    })
+    .catch(err => {
+      console.log('Error: ', err);
     });
   }
 

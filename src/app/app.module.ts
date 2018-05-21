@@ -14,6 +14,8 @@ import { DatabaseProvider } from '../providers/database/database';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
 import { SQLite } from '@ionic-native/sqlite';
 import { Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
+import { Storage } from '@ionic/storage';
 
 /* PAGINAS */
 import {
@@ -35,13 +37,12 @@ import {
     NuevogrupoPage,
     GrupoabiertoPage,
     DetallehistorialPage,
-    PruebasgenericasPage
+    PruebasgenericasPage,
   ],
   imports: [
     BrowserModule,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(MyApp),
-    HttpClientModule
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -62,8 +63,8 @@ import {
     DatabaseProvider,
     SQLitePorter,
     SQLite,
-    HttpClientModule,
-    Http
+    IonicStorageModule,
+    HttpModule
   ]
 })
 export class AppModule {}
