@@ -7,24 +7,28 @@ import { DatabaseProvider } from '../../providers/database/database';
   templateUrl: 'pruebasgenericas.html',
 })
 export class PruebasgenericasPage {
+  mermas = {};
+  merm = {};
+
   constructor(
     public navCtrl: NavController, public navParams: NavParams,
     private database : DatabaseProvider) {
   }
 
   agregarMerma(){
-    this.database.guardarOrden(123456, "R", "Orden de ejemplo").then((data) => {
+    this.database.guardarOrden(parseInt(this.merm['ord']), this.merm['tip'], this.merm['obs']).then((data) => {
       console.log(data);
-
       this.consultarMermas();
     }, (error) => {
       console.log(error);
     })
+    this.merm = {};
   }
 
   consultarMermas(){
     this.database.mostrarOrdenesGuardadas().then((data) => {
       console.log(data);
+      this.mermas = data;
     }, (error) => {
       console.log(error);
     })

@@ -8,15 +8,15 @@
   <ion-list>
     <ion-item>
       <ion-label floating>Valor A</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="merm.ord"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Valor B</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="merm.tip"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label floating>Valor C</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="merm.obs"></ion-input>
     </ion-item>
     <ion-item>
       <button ion-button full color="shamir2" (click)="agregarMerma()">Guardar</button>
@@ -24,10 +24,10 @@
   </ion-list>
 
   <ion-list>
-    <ion-item>
-      <h2></h2>
-      <h2></h2>
-      <h2></h2>
+    <ion-item *ngFor="let m of mermas">
+      <h2>{{ m.ord }}</h2>
+      <h2>{{ m.tip }}</h2>
+      <h2>{{ m.ord }}</h2>
     </ion-item>
   </ion-list>
 

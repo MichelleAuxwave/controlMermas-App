@@ -22,7 +22,7 @@ export class DatabaseProvider {
       this.storage = new SQLite();
       this.storage.create({name: "data.db", location: "default"}).then((db:SQLiteObject) => {
         this.db = db;
-        db.executeSql("CREATE TABLE IF NOT EXIST mermasguardadas(ord int primary key, tip nvarchar, obs nvarchar);",[]);
+        db.executeSql("CREATE TABLE IF NOT EXISTS mermasguardadas(ord int primary key, tip nvarchar, obs nvarchar);",[]);
         this.isOpen = true;
       }).catch((error) => {
         console.log(error);
