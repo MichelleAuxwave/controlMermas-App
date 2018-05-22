@@ -7,12 +7,14 @@ import { DatabaseProvider } from '../../providers/database/database';
   templateUrl: 'pruebasgenericas.html',
 })
 export class PruebasgenericasPage {
-  mermas = [];
   merm = {};
+
+  private ListaMermas : any;
 
   constructor(
     public navCtrl: NavController, public navParams: NavParams,
     private database : DatabaseProvider) {
+      this.consultarMermas();
   }
 
   agregarMerma(){
@@ -27,8 +29,7 @@ export class PruebasgenericasPage {
 
   consultarMermas(){
     this.database.mostrarOrdenesGuardadas().then((data) => {
-      console.log(data);
-      this.mermas = data;
+      this.ListaMermas = data;
     }, (error) => {
       console.log(error);
     })

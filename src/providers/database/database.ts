@@ -3,12 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-/*
-  Generated class for the DatabaseProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class DatabaseProvider {
   private db : SQLiteObject;
@@ -47,14 +42,14 @@ export class DatabaseProvider {
         let arrayOrdenes = [];
         if(data.rows.lenght > 0){
           for(var i = 0; i < data.rows.lenght; i++){
-            arrayOrdenes.push({
+             arrayOrdenes.push({
               ord: data.rows.item(i).ord,
               tip: data.rows.item(i).tip,
               obs: data.rows.item(i).obs
             });
           }
         }
-        resolve(arrayOrdenes.values);
+        resolve(arrayOrdenes);
       }, (error) =>{
         reject(error);
       })
