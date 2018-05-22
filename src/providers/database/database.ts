@@ -34,7 +34,6 @@ export class DatabaseProvider {
   }
 
   guardarOrden(ord: number, tip: string, obs: string){
-    if(this.isOpen){
       return new Promise((resolve, reject) =>{
         let sql = "insert into mermasguardadas (ord, tip, obs) values (?, ?, ?)";
         this.db.executeSql(sql, [ord, tip, obs]).then((data) => {
@@ -48,14 +47,9 @@ export class DatabaseProvider {
           eee.present();
         });
       });
-    }
-    else{
-      this.abrirDB();
-    }
   }
 
   mostrarOrdenesGuardadas(){
-    if(this.isOpen){
       return new Promise ((resolve, reject) => {
         this.db.executeSql("select * from mermasguardadas", []).then((data) => {
           let arrayOrdenes = [];
@@ -77,11 +71,7 @@ export class DatabaseProvider {
           });
           eee.present();
         })
-      })
-    }
-    else{
-      this.abrirDB();
-    }
+      });
   }
 
 }

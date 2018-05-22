@@ -18,28 +18,27 @@ export class PruebasgenericasPage {
   }
 
   agregarMerma(){
-    this.database.guardarOrden(parseInt(this.merm['ord']), this.merm['tip'], this.merm['obs']).then((data) => {
-      console.log(data);
-      this.consultarMermas();
-    }, (error) => {
-      let eee = this.toastCtrl.create({
-        message: error,
-        duration: 5000
-      });
-      eee.present();
-    })
+    this.database.guardarOrden(parseInt(this.merm['ord']), this.merm['tip'], this.merm['obs']).then(
+      (data) => { console.log(data); this.consultarMermas(); },
+      (error) => {
+        let eee = this.toastCtrl.create({
+          message: error,
+          duration: 5000
+        });
+        eee.present();
+    });
     this.merm = {};
   }
 
   consultarMermas(){
-    this.database.mostrarOrdenesGuardadas().then((data) => {
-      this.ListaMermas = data;
-    }, (error) => {
-      let eee = this.toastCtrl.create({
-        message: error,
-        duration: 5000
-      });
-      eee.present();
-    })
+    this.database.mostrarOrdenesGuardadas().then(
+      (data) => { this.ListaMermas = data;},
+      (error) => {
+        let eee = this.toastCtrl.create({
+          message: error,
+          duration: 5000
+        });
+        eee.present();
+    });
   }
 }
