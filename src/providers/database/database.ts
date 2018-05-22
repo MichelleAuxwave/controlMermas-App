@@ -44,6 +44,13 @@ export class DatabaseProvider {
           });
           eee.present();
         });
+      })
+      .catch((error)=>{
+        let eee = this.toastCtrl.create({
+          message: error,
+          duration: 5000
+        });
+        eee.present();
       });
   }
 
@@ -69,6 +76,13 @@ export class DatabaseProvider {
           });
           eee.present();
         })
+        .catch((error)=>{
+          let eee = this.toastCtrl.create({
+            message: error,
+            duration: 5000
+          });
+          eee.present();
+        });
       });
   }
 
