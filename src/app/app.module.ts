@@ -16,6 +16,7 @@ import { HttpModule } from '@angular/http';
 import { Storage } from '@ionic/storage';
 
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { ToastController } from 'ionic-angular';
 
 /* PAGINAS */
 import {
@@ -38,7 +39,7 @@ import { DatabaseProvider } from '../providers/database/database';
     NuevogrupoPage,
     GrupoabiertoPage,
     DetallehistorialPage,
-    PruebasgenericasPage,
+    PruebasgenericasPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,7 @@ import { DatabaseProvider } from '../providers/database/database';
     NuevogrupoPage,
     GrupoabiertoPage,
     DetallehistorialPage,
-    PruebasgenericasPage,
+    PruebasgenericasPage
   ],
   providers: [
     StatusBar,

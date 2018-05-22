@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DatabaseProvider } from '../../providers/database/database';
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-pruebasgenericas',
@@ -13,7 +14,7 @@ export class PruebasgenericasPage {
 
   constructor(
     public navCtrl: NavController, public navParams: NavParams,
-    private database : DatabaseProvider) {
+    private database : DatabaseProvider, public toastCtrl: ToastController) {
       this.consultarMermas();
   }
 
@@ -23,6 +24,11 @@ export class PruebasgenericasPage {
       this.consultarMermas();
     }, (error) => {
       console.log(error);
+      let eee = this.toastCtrl.create({
+        message: error,
+        duration: 3000
+      });
+      eee.present();
     })
     this.merm = {};
   }
@@ -32,6 +38,11 @@ export class PruebasgenericasPage {
       this.ListaMermas = data;
     }, (error) => {
       console.log(error);
+      let eee = this.toastCtrl.create({
+        message: error,
+        duration: 3000
+      });
+      eee.present();
     })
   }
 }
