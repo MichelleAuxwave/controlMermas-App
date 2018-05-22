@@ -18,14 +18,12 @@ export class DatabaseProvider {
       this.storage = new SQLite();
       this.storage.create({name: "data.db", location: "default"}).then((db:SQLiteObject) => {
         this.db = db;
-        db.executeSql(
-          "CREATE TABLE IF NOT EXISTS mermasguardadas(ord int primary key, tip nvarchar, obs nvarchar);"+
-          "INSERT INTO mermasguardadas VALUES(123456, 'G', 'MERMA DE EJEMPLO');"
-          ,[]);
+        db.executeSql("CREATE TABLE IF NOT EXISTS mermasguardadas(ord int primary key, tip nvarchar, obs nvarchar);", {});
+        db.executeSql("INSERT INTO mermasguardadas VALUES(1234, 'G', 'MERMA DE EJEMPLO');", []);
         this.isOpen = true;
       }).catch((error) => {
         let eee = this.toastCtrl.create({
-          message: error,
+          message: "A: " + error,
           duration: 5000
         });
         eee.present();
@@ -41,7 +39,7 @@ export class DatabaseProvider {
         }, (error) => {
           reject(error);
           let eee = this.toastCtrl.create({
-            message: error,
+            message: "B: " + error,
             duration: 5000
           });
           eee.present();
@@ -66,7 +64,7 @@ export class DatabaseProvider {
         }, (error) =>{
           reject(error);
           let eee = this.toastCtrl.create({
-            message: error,
+            message: "C: " + error,
             duration: 5000
           });
           eee.present();

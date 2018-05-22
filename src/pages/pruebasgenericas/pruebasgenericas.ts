@@ -22,7 +22,7 @@ export class PruebasgenericasPage {
       (data) => { console.log(data); this.consultarMermas(); },
       (error) => {
         let eee = this.toastCtrl.create({
-          message: error,
+          message: "D: " + error,
           duration: 5000
         });
         eee.present();
@@ -32,10 +32,10 @@ export class PruebasgenericasPage {
 
   consultarMermas(){
     this.database.mostrarOrdenesGuardadas().then(
-      (data) => { this.ListaMermas = data;},
+      (data) => { this.ListaMermas = data; },
       (error) => {
         let eee = this.toastCtrl.create({
-          message: error,
+          message: "E: " + error,
           duration: 5000
         });
         eee.present();
