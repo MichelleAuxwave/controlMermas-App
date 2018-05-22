@@ -9,7 +9,6 @@ import { ToastController } from 'ionic-angular';
 })
 export class PruebasgenericasPage {
   merm = {};
-
   private ListaMermas : any;
 
   constructor(
@@ -23,10 +22,9 @@ export class PruebasgenericasPage {
       console.log(data);
       this.consultarMermas();
     }, (error) => {
-      console.log(error);
       let eee = this.toastCtrl.create({
         message: error,
-        duration: 3000
+        duration: 5000
       });
       eee.present();
     })
@@ -37,10 +35,9 @@ export class PruebasgenericasPage {
     this.database.mostrarOrdenesGuardadas().then((data) => {
       this.ListaMermas = data;
     }, (error) => {
-      console.log(error);
       let eee = this.toastCtrl.create({
         message: error,
-        duration: 3000
+        duration: 5000
       });
       eee.present();
     })

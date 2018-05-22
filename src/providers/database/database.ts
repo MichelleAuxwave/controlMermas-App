@@ -1,9 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-
 import { ToastController } from 'ionic-angular';
 
 @Injectable()
@@ -26,10 +24,9 @@ export class DatabaseProvider {
           ,[]);
         this.isOpen = true;
       }).catch((error) => {
-        console.log(error);
         let eee = this.toastCtrl.create({
           message: error,
-          duration: 3000
+          duration: 5000
         });
         eee.present();
       })
@@ -45,7 +42,7 @@ export class DatabaseProvider {
         reject(error);
         let eee = this.toastCtrl.create({
           message: error,
-          duration: 3000
+          duration: 5000
         });
         eee.present();
       });
@@ -70,7 +67,7 @@ export class DatabaseProvider {
         reject(error);
         let eee = this.toastCtrl.create({
           message: error,
-          duration: 3000
+          duration: 5000
         });
         eee.present();
       })
