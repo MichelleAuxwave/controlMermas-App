@@ -9,14 +9,10 @@ import { MyApp } from './app.component';
 /* PLUGINS */
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IonicStorageModule } from '@ionic/storage';
-import { HttpClientModule } from '@angular/common/http';
 import { SQLitePorter } from '@ionic-native/sqlite-porter';
-import { Http } from '@angular/http';
 import { HttpModule } from '@angular/http';
-import { Storage } from '@ionic/storage';
 
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-import { ToastController } from 'ionic-angular';
 
 /* PAGINAS */
 import {
